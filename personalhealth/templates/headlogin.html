@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br><br>
+<br> <br><br>
+<title>ADMIN PAGE</title>
+<style>
+body{
+    background-image:url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png");
+}
+</style>
+<body>
+<form action="/adminlogin/" method="post">
+{% csrf_token %}
+<br>
+<div class="content" style="background-color:lightgrey;width:500px;height:400px;border-radius:10px;">
+<br><br>
+<center><h4 style="color: black;"><b> Admin LogIn </b>&nbsp; <i class="bi bi-person-bounding-box"></i></h4></center><br>
+
+    <label for="email" style="margin-left:-230px;color:black;"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;<b>Email<b></label>
+    <input type="text"style="width:300px;" class="form-control" id="email" name="email" placeholder="Enter your Email ID" required/>
+ <br>
+    <label for="Password"  style="margin-left:-190px;color:black;"><i class="bi bi-lock-fill"></i>&nbsp;&nbsp;<b>Password<b></label>
+    <input type="password" style="width:300px;" class="form-control" id="password" name="password" placeholder="Enter the Password" required/>
+<br>
+<center><button type="submit" class="btn btn-warning"><B>LOGIN</B></button></center>
+</div>
+</form>
+</body>
+{% endblock content %}

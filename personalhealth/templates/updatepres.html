@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block content %}
+<form action="/updateprescription/" method="post">
+    <br><br><br><br>
+    <div class="form-row">
+        {% csrf_token %}
+        {% for presc in pres %}
+        <input type="hidden" name="id" id="id"  value="{{presc.id}}"required/>
+            <label class="control-label col-sm-2" for="hospital name">Prescription Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="prescriptionname" value="{{presc.prescrip_name}}">
+            </div>
+            <br><br><br>
+            <label class="control-label col-sm-2" for="location">Description</label>
+            <div class="col-sm-10">
+                <textarea  rows="5" cols="35" name="description" class="form-control" value="{{presc.description}}"></textarea>
+            </div><br><br><br>
+            <label class="control-label col-sm-2" for="phone">Time</label>
+            <div class="col-sm-10">
+                <input type="time" name="time" class="form-control" value="{{presc.time}}">
+            </div><br><br><br>
+            <label class="control-label col-sm-2" for="phone">Disease Name</label>
+            <div class="col-sm-10">
+                <input type="text" name="diseasename" class="form-control" value="{{presc.diseasename}}">
+            </div><br><br><br>
+            <label class="control-label col-sm-2" for="phone">Meal</label>
+            <div class="col-sm-10">
+                <select name="meal" class="form-control" value="{{presc.meal}}"> 
+                    <option name="Before" value="Before"> Before</option>
+                    <option name="After" value="After"> After</option> 
+                    <option name="No restriction" value="No restriction">No restriction</option>
+                    </select>
+            </div>
+          </div><br><br><br>
+          {% endfor %}
+        <center>
+        <button type="submit" class="btn btn-warning"><B>Update Prescription</B></button></center>
+        </form>
+{% endblock content %}

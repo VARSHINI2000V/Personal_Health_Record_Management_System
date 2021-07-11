@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block content %}
+<form action="/updaterecord/" method="post">
+    <br><br><br><br>
+{% csrf_token %}
+<br>
+<center><h2 style="color:black;"><b>Update Record Details</b></h2></center> <br>
+
+<div id="con" >
+{% include 'templates/messages.html'%}
+
+{% block con %} {% endblock con %}
+</div>
+
+
+{% for recor in rec %}
+<input type="hidden" class="form-control" name="id" id="id"  value="{{recor.id}}"required/></div>
+<br>
+
+      <label for="hname" style="margin-left:-380px;"><b>Hospital Name</b></label>
+      <input type="text" class="form-control" style="width:500px;"name="hname" value="{{recor.hospitalname}}" required/>
+      <br>
+    
+    <label for="dname" style="margin-left:-380px;"><b>Doctor Name</b></label> 
+    <input type="text" class="form-control" name="dname" style="width:500px;" value="{{recor.doctorname}}" required/>
+      <br>
+    
+          <label for="date" style="margin-left:-450px;"><b>Date</b></label>
+          <input type="date" name="date" class="form-control"style="width:500px;" value="{{recor.date}}" required/>
+        <br>
+        <label for="dname" style="margin-left:-380px;"><b>Diseasename</b></label> 
+        <input type="text" class="form-control" name="diname" style="width:500px;"value="{{recor.diseasename}}" required/>
+          <br>
+              <label for="presc" style="margin-left:-380px;"><b>Prescription</b></label>
+              <input type="file" class="form-control" name="presc"style="width:500px;" value="{{recor.prescription}}" required/>
+            <br>
+            <label for="fil" style="margin-left:-380px;"><b>HealthReports</b></label> 
+            <input type="file" name="fil" class="form-control" style="width:500px;"value="{{recor.file}}" required/>
+              <br>
+                  <label for="hlocation" style="margin-left:-380px;"><b>HospitalLocation</b></label>
+                  <input type="text" class="form-control" name="hlocation"style="width:500px;" value="{{recor.hospitallocation}}" required/>
+                <br>
+                <label for="dtname" style="margin-left:-380px;"><b>DocumentName</b></label> 
+                <input type="text" class="form-control" name="dtname"style="width:500px;" value="{{recor.documentname}}" required/><br>
+                 
+<label for="dename" style="margin-left:-400px;"><b>Description</b></label>
+<input type="text" class="form-control" name="desc" style="width:500px;"value="{{recor.description}}" required/><br>
+<br>
+{% endfor%}
+<button type="submit" class="btn btn-warning"> <b>Update</b></button>
+</form>
+{% endblock content %}

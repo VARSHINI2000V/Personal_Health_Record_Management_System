@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+<center>
+    <br><br><br><br>
+<center><h3 style="color: black;"><b>My Prescription</b></h3></center>
+<br>
+
+<div id="con">
+{% include 'templates/messages.html'%}
+
+{% block con %} {% endblock con %}
+</div>
+<div class="content" style="width:1200px;height:400px;border-radius:10px;">
+<table class="table table-light table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Medicine Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Disease Name</th>
+        <th scope="col">Time</th>
+        <th scope="col">Meal</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+{% for i in prescription %}
+<tbody>
+<tr>
+    <td>{{i.prescrip_name}}</td>
+    <td>{{i.description}}</td>
+    <td>{{i.diseasename}}</td> 
+    <td>{{i.time}}</td> 
+    <td>{{i.meal}}</td> 
+    <td><a href="/presdelete/{{i.id}}" >Delete</a></td>
+    <td><a href="/presupdate/{{i.id}}" >update</a></td> 
+</tr>
+{% endfor %}
+</table>
+</div>
+</center>
+{% endblock content %}

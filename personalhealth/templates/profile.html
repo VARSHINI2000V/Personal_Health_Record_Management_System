@@ -1,0 +1,108 @@
+{% extends "main.html" %}
+{% block content %}
+<style>
+  body{
+      background-image:url("https://wallpaperaccess.com/full/449895.jpg");
+      background-size: cover;
+      color:black;
+  }
+</style>
+<body>
+ <form class="well form-horizontal" action="/addprofile/ " method="post"  id="contact_form">
+  <br><br><br>
+<legend><center><h2><b>Update Profile</b></h2></center></legend><br>
+{% csrf_token %}
+
+<div class="row">
+  <div class="col">
+    <label for="fname"><b>First Name</b></label>
+    <input name="fname" placeholder="First Name" class="form-control"  type="text">
+  </div>
+<div class="col">
+  <label for="lname"><b>Last Name</b></label> 
+  <input name="lname" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row"> 
+     <div class="col">
+      <label class="col-md-4 control-label" >DOB</label> 
+    <div class="input-group">
+ <input type="date" placeholder="enter your Date of Birth"  class="form-control" name="dob"><br>
+</div>
+</div>
+       
+<div class="col"> 
+  <label class="col-md-4 control-label">ContactNo</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="Enter your phone number" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+       
+<div class="row"> 
+  <div class="col">
+  <label class="col-md-4 control-label">HealthIssue</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="healthissue" class="form-control selectpicker">
+      <option value="">Select the health issue</option>  
+       <option>Heart</option>
+       <option>Lungs</option>
+       <option>Eye</option>
+       <option>Kidney</option>
+</select>
+  </div>
+</div>
+<div class="col">
+  <label class="col-md-4 control-label">Interest</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="interest" class="form-control selectpicker">
+      <option value="">Choose the interest</option>  
+      <option>Politics</option>
+      <option>ComputerScience</option>
+      <option>History</option>
+</select>
+  </div>
+</div>
+</div>
+
+<div class="row"> 
+  <div class="col">
+  <label class="col-md-4 control-label">Hobby</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="hobby" class="form-control selectpicker">
+      <option value="">Select the hobby</option>  
+      <option>Sports</option>
+      <option>Music</option>
+      <option>Cooking</option>
+      <option>Movies</option>
+       <option>Drawing</option>
+</select>
+  </div>
+</div>
+<div class="col"> 
+  <label class="col-md-4 control-label">Economic Preference</label>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="economic_pref" class="form-control selectpicker">
+      <option value="">Select the economic preference</option>  
+      <option>High</option>
+      <option>Moderate</option>
+      <option>Low</option>
+</select>
+  </div>
+</div>
+</div>
+<br><br>
+<button type="submit" class="btn btn-warning" ><b>UPDATE</b><span class="glyphicon glyphicon-send"></span></button>
+
+</form>
+</body>
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+require(datasets)
+> data("airquality")
+
+> str(airquality)
+
+> head(airquality)
+
+> air=airquality
+> head(air)
+> summary(air)
+
+> for( i in 1:nrow(air)){
++ if(is.na(air[i,"Ozone"])){
++ air[i,"Ozone"]<- mean(air[which(air[,"Month"]==air[i,"Month"]),"Ozone"],na.rm=TRUE)
++ }
++ if(is.na(air[i,"Solar.R"])){
++ air[i,"Solar.R"]<-mean(air[which(air[,"Month"]==air[i,"Month"]),"Solar.R"],na.rm=TRUE)
++ }
++ }
+
+> summary(air)
+> normalize<-function(x){
++ return((x-min(x))/(max(x)-min(x)))
++ }
+> summary(air)
+> air<-normalize(air)
+> air
+      
+> summary(air)
+   
+> str(air)
+
+> Y<- air[,"Ozone"]
+> X<- air[,"Solar.R"]
+> model1<-lm(X~Y)
+> model1<-lm(Y~X)
+> model1
+
+> plot(Y~X)
+> abline(model1,col="blue",lwd=3)
+> y<-air[,"Ozone"]
+> Y<-air[,"Ozone"]
+> X<- air[,"Wind"]
+> model2<-lm(Y~X)
+> model2
+
+> plot(Y~X)
+> abline(model2,col="blue",lwd=3)
+> p1<- predict(model1,data.frame("X"=10))
+> p1
+> p2<- predict(model2,data.frame("X"=5))
+> p2
+> 

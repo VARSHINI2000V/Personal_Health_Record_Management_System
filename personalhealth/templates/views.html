@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block content %}
+<br>
+<br><br><br>
+<center>
+<h3 style="color:black;">Records</h3></center>
+<br>
+
+<div class="content" style="width:1200px;height:400px;border-radius:10px;">
+    <table class="table table-light table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Hospital Name</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Hospital Location</th>
+            <th scope="col">DiseaseName</th>
+            <th scope="col ">Date</th>
+            <th scope="col">Document Name</th>
+            <th scope="col">Description</th>
+            <th scope="col ">Prescription</th>
+            <th scope="col ">Health Reports</th>
+            <th scope="col ">Delete</th>
+            <th scope="col ">Update</th>
+          </tr>
+        </thead>
+{% for i in myrecord %}
+<tbody>
+    <tr>
+      <td>{{i.hospitalname}}</td>
+      <td>{{i.doctorname}}</td>
+      <td>{{i.hospitallocation}}</td>
+      <td>{{i.diseasename}}</td> 
+    <td>{{i.date}}</td> 
+    <td>{{i.documentname}}</td> 
+    <td>{{i.description}}</td>
+    <td><a href="{{i.prescription.url}}" download="PDF">Download</a></td>
+    <td><a href="{{i.file.url}}" download="PDF">Download</a></td> 
+    <td><a href="/recordelete/{{i.id}}" >Delete</a></td>
+    <td><a href="/recordupdate/{{i.id}}" >update</a></td>
+    </tr>
+{% endfor %}
+</div>
+</table>
+{% endblock content %}

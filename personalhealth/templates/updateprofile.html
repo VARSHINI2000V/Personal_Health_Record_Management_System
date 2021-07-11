@@ -1,0 +1,192 @@
+
+<html>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<style>
+body
+{
+  background-image:url("https://www.cerner.com/-/media/cerner-media-united-states/blog-images/blog_machine-learning-2.jpg?vs=1");
+}
+
+
+
+</style>
+<body>
+  
+    <nav class="navbar navbar-expand-md fixed-top  bg-light">
+      
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">	
+            
+        <li ><a href="{% url 'uuhome' %}" class="btn btn-light"><b>Home</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;"><b>Profile</b></a>
+            <div class="dropdown-menu" >
+                <a href="{% url 'updateprofile' %}" class="dropdown-item">Update Profile</a>
+                 <a href="{% url 'cp' %}" class="dropdown-item">ChangePassword</a>
+                <a class="dropdown-item" href="{% url 'viewprofile' %}">View Profile</a>
+            </div>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;"><b>Records</b></a>
+            <div class="dropdown-menu">
+                <a href="{% url 'rec' %}" class="dropdown-item">Add Records</a>
+                <a class="dropdown-item" href="{% url 'viewrecord' %}">View Records</a>
+                <a class="dropdown-item" href="{% url 'pres' %}">Add Prescription</a>
+                <a class="dropdown-item" href="{% url 'viewpres' %}">View Prescription</a>
+            </div>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;"><b>Search Record</b></a>
+            <div class="dropdown-menu">
+            
+           <a href="{% url 'searchhos' %}" class="dropdown-item" ><b>Hospital Name</b></a>
+      <a href="{% url 'searchdoc' %}" class="dropdown-item" ><b>Doctor Name</b></a>
+      <a href="{% url 'searchdocname' %}" class="dropdown-item" ><b>Document Name</b></a>
+                
+            </div>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;"><b>Emergency</b></a>
+            <div class="dropdown-menu">
+            
+
+          <a href="{% url 'uviewemergency' %}" class="dropdown-item" ><b>View Emergency</b></a>
+<a href="{% url 'searchemerhname' %}" class="dropdown-item" ><b>Search By Hospital Name</b></a>   
+<a href="{% url 'searchemerloc' %}" class="dropdown-item" ><b>Search By Location</b></a>
+<a href="{% url 'searchspl' %}" class="dropdown-item"><b>search By speciality</b></a>
+                
+            </div>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<li><a href="{% url 'logout' %}" class="btn btn-warning" style="text-align:right;"><b>Log Out</b></a></li>
+            
+    				</ul>
+    			</div>
+    		</nav>
+      <br><br>
+<center>
+<form action="/update/" method="post">
+{% csrf_token %}
+{% for profile in userprofile %}
+<br><br>
+
+<center><h2 style="color:white;"><b>UPDATE USER PROFILE DETAILS</b></h2></center> <br>
+<br><br>
+
+<div id="con" >
+{% include 'templates/messages.html'%}
+
+{% block con %} {% endblock con %}
+</div>
+
+
+<div class="form-group">
+<label class="col-md 4 control-label" style="color:white;margin-left:-380px;"><b>First Name</b></label>
+<div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+<input type="text" class="form-control" name="name" value="{{profile.firstname}}" >
+</div>
+</div>
+</div>
+
+
+
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color:white;margin-left:-380px;"><b>Last Name</b></label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="lname" placeholder="Last Name" class="form-control"  type="text" value="{{profile.lastname}}" >
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+ <label class="col-md-4 control-label" style="color:white;margin-left:-420px;"><b>DOB</b></label> 
+     <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+ <input type="date" placeholder="enter your Date of Birth"  class="form-control" name="dob" value="{{profile.dob}}" required/><br>
+</div>
+  </div>
+</div>
+       
+
+<label for="interest" style="color:white;margin-left:-420px;"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;<b>Interest</b></label> 
+  <input name="interest" style="width:480px;" placeholder="Enter YourInterest" class="form-control" value="{{profile.interest}}" type="text">
+  
+<br>
+<label for="lname" style="color:white;margin-left:-390px;"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;<b>Health Issue</b></label> 
+  <input name="healthissue" style="width:480px;" placeholder="Enter Your Health Issue" class="form-control" value="{{profile.healthissue}}" type="text">
+
+<br>
+<label for="lname" style="color:white;margin-left:-430px;"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;<b>Hobby</b></label> 
+  <input name="hobby" style="width:480px;" placeholder="Enter Your Hobby" class="form-control" value="{{profile.hobby}}" type="text">
+<br>
+<div class="form-group"> 
+  <label class="col-md-4 control-label" style="color:white;margin-left:-320px;"><b>Economic Preference</b></label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="economic_pref" class="form-control selectpicker">
+      <option  value="{{profile.economic_pref}}" >Select the economic preference</option>  
+<option>High</option>
+      <option>Moderate</option>
+      <option>Low</option>
+</select>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"style="color:white;margin-left:-380px;"><b>Contact No.</b></label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="Enter your phone number" class="form-control" type="text"  value="{{profile.phone}}" required/>
+    </div>
+  </div>
+</div>
+{%endfor %}
+<br>
+<button type="submit" class="btn btn-warning" style="width:200px;"><b>Update</b></button>
+</form>
+</center>
+</body>
+</html>
